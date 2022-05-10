@@ -1,0 +1,39 @@
+<div class="wrapper1">
+  <div class="element">
+    <div class="el-child-inline">
+      <div class="ui-checkbox bg-crimson ui-medium ui-animation-rotate round">
+        <input type="radio" id="doctor" name="medical"  [routerLink]="['/consulta']">
+        <span class="ui-custom">
+          <span class="ui-checked" > <i class="fa-solid fa-user-doctor"></i></span>
+          <span class="ui-unchecked"  style="color: #CCC;"><i class="fa-solid fa-user-doctor" ></i></span>
+        </span>
+      </div>
+      <label for="doctor">Diagnosticar</label>
+    </div>
+    <div class="el-child-inline">
+      <div class="ui-checkbox bg-crimson ui-medium ui-animation-flip round">
+        <input type="radio" id="Notes" name="medical" [routerLink]="['/historial']">
+        <span class="ui-custom">
+          <span class="ui-checked" > <i class="fa-solid fa-notes-medical" ></i></span>
+          <span class="ui-unchecked"  style="color: #CCC;"><i class="fa-solid fa-notes-medical" ></i></span>
+        </span>
+      </div>
+      <label for="Notes">Ver diagnosticos</label>
+    </div>
+
+
+
+    <img class ="logo" align="right" src="./assets/logo-hospital.svg" alt='Logo Hospital'/>
+      <button class="profile-btn">
+        <img class="user" src="../assets/user.png" align="right"/>
+        <span> Doctor </span>
+      </button>
+     
+
+
+    
+  </div>
+</div>
+<div class="wrapper">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,62 @@
+<div id="app" class="main">
+  <h2> ¡Bienvenido!</h2>
+	<div class="row">
+		<!-- <div class="col-10 offset-1">
+			<div class="card">
+				<div class="card-body">
+					<div class="form-group">
+						<label for="exampleInputPassword1">Ingrese el id del paciente</label>
+						<input autofocus class="form-control" >
+					</div>
+				</div>
+			</div>
+		</div> -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <form [formGroup]="form" (submit)="predecir()">
+            <div class="card">
+              <a class="list-group-item list-group-item-action list-group-item-primary">Coloca el abstract médico </a>
+                <textarea class="form-control" formControlName="diagnostico" rows="15" v-model="words" (change)="on_ChangeInput()"></textarea>
+            </div>
+            <div *ngIf="buttonEnabled"> 
+              <button type="button" class="btn btn-outline-info">Diagnosticar</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="col-4">
+          <div class="card">
+            <ol class="list-group list-group-numbered">
+              <a class="list-group-item list-group-item-action list-group-item-primary">Convenciones </a>
+              <li class="list-group-item d-flex justify-content-between align-items-start"  *ngFor="let enf of enfermedades">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">{{enf.nombre}}</div>
+                  {{enf.descripcion}}
+                </div>
+                <span class="badge bg-primary rounded-pill"> casos: {{enf.casos}}</span>
+              </li>
+            </ol>      
+          </div>
+          <div class ="row"> 
+            <!-- <div class="col">
+              <div *ngIf="!buttonEnabled">
+                <button type="button" class="btn btn-outline-info" disabled>Diagnosticar</button>
+              </div>
+              <div *ngIf="buttonEnabled">
+                <button type="button" class="btn btn-outline-info">Diagnosticar</button>
+              </div>
+            </div> -->
+            <div class="col">
+              <div class="card">
+                <a class="list-group-item list-group-item-action list-group-item-primary">Resultado </a>
+                <textarea class="form-control" rows="1" v-model="result"></textarea>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
