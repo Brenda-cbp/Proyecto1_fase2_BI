@@ -1,19 +1,16 @@
 export class Enfermedad {
   convension: number;
   nombre: String;
-  descripcion: String;
-  casos:number;
+  proba:String;
 
   constructor(
     convension: number,
     nombre: String,
-    descripcion: String,
-    casos:number
+    proba:String
   )
   {
     this.convension= convension;
     this.nombre=nombre;
-    this.descripcion=descripcion;
-    this.casos=casos;
+    this.proba=proba;
   }
 }
