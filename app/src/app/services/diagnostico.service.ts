@@ -7,7 +7,7 @@ import { Observable} from "rxjs";
 })
 export class DiagnosticoService {
 
-  servidor= "http://3.228.160.169/"  //"CAMBIARRRRRRRRRRRRRRRRRRRRRRR"
+  servidor= "http://127.0.0.1:8000"  //"CAMBIARRRRRRRRRRRRRRRRRRRRRRR"
   constructor(private servicio: HttpClient) { }
 
   generarDiagnostico(abstract: String): Observable<any> {

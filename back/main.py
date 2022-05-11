@@ -4,14 +4,25 @@ import fastapi
 import numpy as np
 import pandas as pd
 from typing import Optional
-from pandas import json_normalize
 from keras.models import load_model
-from dataModel import DataModel, DataModelList
-from dataModel import DataEsperadaLista
+from dataModel import DataModel
 from joblib import load
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = fastapi.FastAPI(title= "Proyecto 1 Fase 2 BI", description="Realizado por Sofía Alvarez, Brenda Barahona, Alvaro Plata ", version="2.0.1")
 
+# Arreglo de las urls que pueden acceder al backend
+origins = ["http://localhost:4200"]
+
+# Manejo de las cors para habilitar los endpoints
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
