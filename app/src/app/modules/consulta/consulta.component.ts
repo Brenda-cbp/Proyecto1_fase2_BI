@@ -34,7 +34,7 @@ export class ConsultaComponent implements OnInit {
      }
 
 
-  ngOnInit() {  
+  ngOnInit() {
     this.form= this.formBuilder.group({
       diagnostico:[""]
     })
@@ -45,12 +45,14 @@ export class ConsultaComponent implements OnInit {
 
   predecir(){
     this.progress=true
-    // console.log ("Llego")
-    // this.diagnosticoService.generarDiagnostico(this.form.value).subscribe(datos =>{
-    //   console.log(datos)
-    //   this.resultado = datos
-    // })
-    // this.progress=false
+     console.log ("Llego")
+    let datosServicio
+    this.diagnosticoService.generarDiagnostico(this.form.value).subscribe(datos =>{
+      console.log(datos)
+      datosServicio = datos
+    //falta asignar las variables
+    })
+    this.progress=false
   }
 
   darEnfermedadSegunConvencion (convencion:number){
