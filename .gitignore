@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/*
+back/__pycache__/
+notebooks/.ipynb_checkpoints/
+notebooks/BioSentVec_PubMed_MIMICIII-bigram_d700.bin
+notebooks/__pycache__/
+notebooks/sent2vec/
+sent2vec/
