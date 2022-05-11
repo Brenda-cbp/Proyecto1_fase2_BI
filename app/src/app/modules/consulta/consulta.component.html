@@ -10,7 +10,7 @@
           <form [formGroup]="form" (submit)="predecir()">
             <div class="card">
               <a class="list-group-item list-group-item-action list-group-item-primary">Coloca el abstract médico </a>
-                <textarea class="form-control" formControlName="diagnostico" rows="15" v-model="words" (change)="on_ChangeInput()"></textarea>
+                <textarea class="form-control" formControlName="medical_abstracts" rows="15" v-model="words" (change)="on_ChangeInput()"></textarea>
             </div>
             <div *ngIf="buttonEnabled">
               <button type="submit button" class="btn btn-outline-info" (clic)="predecir()">Diagnosticar</button>

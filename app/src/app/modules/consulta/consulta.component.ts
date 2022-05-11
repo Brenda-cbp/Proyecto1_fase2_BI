@@ -29,14 +29,14 @@ export class ConsultaComponent implements OnInit {
   constructor(private diagnosticoService: DiagnosticoService,
     private formBuilder: FormBuilder) {
       this.form= this.formBuilder.group({
-        diagnostico:[""]
+        medical_abstracts:[""]
       })
      }
 
 
   ngOnInit() {
     this.form= this.formBuilder.group({
-      diagnostico:[""]
+      medical_abstracts:[""]
     })
 
   }
@@ -60,7 +60,7 @@ export class ConsultaComponent implements OnInit {
     else if (convencion==2){ return this.enfermedades[1]}
     else if (convencion==3){ return this.enfermedades[2]}
     else if (convencion==4){ return this.enfermedades[3]}
-    else if (convencion==5){ return this.enfermedades[3]}
+    else if (convencion==5){ return this.enfermedades[4]}
     else{ return ""}
   }
 }
