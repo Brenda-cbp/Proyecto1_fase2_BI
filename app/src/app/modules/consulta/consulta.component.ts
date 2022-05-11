@@ -70,6 +70,7 @@ export class ConsultaComponent implements OnInit {
         }
 
         this.resultado = string_prediccion.concat(string_probabilidades);
+        console.log(this.resultado);
       });
     this.progress = false;
   }
