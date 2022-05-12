@@ -65,7 +65,7 @@ export class ConsultaComponent implements OnInit {
         // let string_probabilidades: string = '';
 
         for (let i = 0; i < this.enfermedades.length; i++) {
-          this.enfermedades[i].proba = `${probabilities[i] * 100}%`
+          this.enfermedades[i].proba = `${(probabilities[i] * 100).toFixed(2)}%`
           // string_probabilidades = string_probabilidades.concat(
           //   `${this.enfermedades[i].nombre}: ${probabilities[i] * 100}%\n`
           // );

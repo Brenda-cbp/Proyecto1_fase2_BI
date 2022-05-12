@@ -1,11 +1,11 @@
 <div id="app" class="main">
-  <h2> ¡Bienvenido!</h2>
+  <h2 *ngIf="progress == false"> ¡Bienvenido!</h2>
   <div class="progress" *ngIf="progress">
     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
   </div>
 	<div class="row">
     <div class="container">
-      <div class="row">
+      <div *ngIf="progress == false" class="row">
         <div class="col-8">
           <form [formGroup]="form" (submit)="predecir()">
             <div class="card">
@@ -15,7 +15,6 @@
             <div *ngIf="buttonEnabled">
               <button type="submit button" class="btn btn-outline-info" (clic)="predecir()">Diagnosticar</button>
             </div>
-            <div *ngIf="progress" class="loader center"></div>
           </form>
         </div>
 
@@ -45,6 +44,7 @@
           </div>
         </div>
       </div>
+      <div *ngIf="progress" class="loader center"></div>
     </div>
 	</div>
 </div>
