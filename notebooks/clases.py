@@ -156,15 +156,20 @@ class VectorizeLSTM():
     def __init__(self):
         pass
     def transform(self,X,y=None):
+        # Union de todos los tokens.
         X["medical_abstracts"] = X["medical_abstracts"].apply(lambda x: ' '.join(map(str, x)))
+        # Inicializacion del modelo para realizar el embedding.
         model_path = 'BioSentVec_PubMed_MIMICIII-bigram_d700.bin'
         model = sent2vec.Sent2vecModel()
         try:
+            # Carga del modelo.
             model.load_model(model_path)
             print('Model successfuly loaded')
         except Exception as e:
             print(e)
+        # Embebiendo las frases de los datos como vectores de 700 dimensiones bajo el modelo cargado.
         new_X = model.embed_sentences(X["medical_abstracts"])
+        # Ajuste de la forma de los datos para ser recibidos por la red neuronal.
         new_X = new_X.reshape(-1, 1, new_X.shape[1])
         return new_X
     def fit(self, X, y=None):
