@@ -15,6 +15,7 @@
             <div *ngIf="buttonEnabled">
               <button type="submit button" class="btn btn-outline-info" (clic)="predecir()">Diagnosticar</button>
             </div>
+            <div *ngIf="progress" class="loader center"></div>
           </form>
         </div>
 

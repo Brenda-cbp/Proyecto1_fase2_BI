@@ -50,29 +50,33 @@ export class ConsultaComponent implements OnInit {
 
   predecir() {
     this.progress = true;
+    console.log(this.progress);
     console.log('Llego');
     this.diagnosticoService
       .generarDiagnostico(this.form.value)
       .subscribe((datos) => {
         console.log(datos);
-        let probabilities: Number[] = JSON.parse(
+        let probabilities: number[] = JSON.parse(
           datos.probabilities.replace(' ', '')
         );
-        let string_prediccion: string = `La categoría con mayor probabilidad es: ${
-          this.enfermedades[parseInt(datos.predict) - 1].nombre
-        }.\n\nLas probabilidades de pertenecer a cada categoría son:\n`;
-        let string_probabilidades: string = '';
+        // let string_prediccion: string = `La categoría con mayor probabilidad es: ${
+        //   this.enfermedades[parseInt(datos.predict) - 1].nombre
+        // }.\n\nLas probabilidades de pertenecer a cada categoría son:\n`;
+        // let string_probabilidades: string = '';
 
         for (let i = 0; i < this.enfermedades.length; i++) {
-          string_probabilidades.concat(
-            `${this.enfermedades[i].nombre}: ${probabilities[i]}\n`
-          );
+          this.enfermedades[i].proba = `${probabilities[i] * 100}%`
+          // string_probabilidades = string_probabilidades.concat(
+          //   `${this.enfermedades[i].nombre}: ${probabilities[i] * 100}%\n`
+          // );
         }
 
-        this.resultado = string_prediccion.concat(string_probabilidades);
+        // this.resultado = string_prediccion.concat(string_probabilidades);
+        this.resultado = this.enfermedades[parseInt(datos.predict) - 1].nombre;
         console.log(this.resultado);
       });
     this.progress = false;
+    console.log(this.progress)
   }
 
   darEnfermedadSegunConvencion(convencion: number) {
