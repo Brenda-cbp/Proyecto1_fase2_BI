@@ -11,4 +11,4 @@ pip install -r requirements.txt
 # Descarga del modelo preentrenado
 # NOTA: Este modelo pesa 20 GB.
 cd notebooks
-wget https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/BioSentVec/BioSentVec_PubMed_MIMICIII-bigram_d700.bin
+curl https://ftp.ncbi.nlm.nih.gov/pub/lu/Suppl/BioSentVec/BioSentVec_PubMed_MIMICIII-bigram_d700.bin -o BioSentVec_PubMed_MIMICIII-bigram_d700.bin
