@@ -13,6 +13,9 @@ El proyecto tiene 4 carpetas:
 
 ### Instrucciones de ejecución
 
-Debido a que se utilizó una gran cantidad de librerías, e incluso modelos preentrenados para la vectorización de textos (que pesa aproximadamente 20 GB), la instalación del proyecto puede ser un poco demorada. Por tanto, se implementó un script de <code>bash</code> para facilitar el proceso de instalación, este se denomina <code>RUNME.sh</code>. Para ejecutarlo, únicamente corra el comando <code>./RUNME.sh</code>.
+Debido a que se utilizó una gran cantidad de librerías, e incluso modelos preentrenados para la vectorización de textos (que pesa aproximadamente 20 GB), la instalación del proyecto puede ser un poco demorada. Por tanto, se implementó un script de <code>bash</code> para facilitar el proceso de instalación, este se denomina <code>RUNME.sh</code>. Para ejecutarlo, únicamente corra el comando <code>./RUNME.sh</code>. Corriendo esto, ya tendrá todas las librerías necesarias para ejecutar el proyecto.
+
+<b>Para ejecutar el back:</b> En la carpeta back del proyecto, ejecute el comando <code>uvicorn main:app --reload</code> para correr el servicio de forma local.
+<b>Para ejecutar el front:</b> En la carpeta app del proyecto, ejecute el comando <code>npm i </code> seguido de <code>ng serve</code>. Asegúrese de tener <code>node</code> y <code>angular</code> instalados.
 
 
