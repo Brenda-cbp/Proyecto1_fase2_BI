@@ -56,6 +56,7 @@ export class ConsultaComponent implements OnInit {
       .generarDiagnostico(this.form.value)
       .subscribe((datos) => {
         console.log(datos);
+        this.progress = false;
         let probabilities: number[] = JSON.parse(
           datos.probabilities.replace(' ', '')
         );
@@ -75,7 +76,6 @@ export class ConsultaComponent implements OnInit {
         this.resultado = this.enfermedades[parseInt(datos.predict) - 1].nombre;
         console.log(this.resultado);
       });
-    this.progress = false;
     console.log(this.progress)
   }
 

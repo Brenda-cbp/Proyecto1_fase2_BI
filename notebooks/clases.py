@@ -145,7 +145,6 @@ class StemAndLemmatize():
         pass
     def transform(self,X,y=None):
         X["medical_abstracts"] = X["medical_abstracts"].apply(stem_and_lemmatize)
-        #X["non_tokenized_abstracts"] = X["medical_abstracts"].apply(lambda x: ' '.join(map(str, x)))
         return X
     def fit(self, X, y=None):
         return self
